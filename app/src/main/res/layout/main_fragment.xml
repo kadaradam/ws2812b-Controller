@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:id="@+id/full_color_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/layout_round"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Color"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Spinner
+            android:id="@+id/colormode_spinner"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/myRectangleView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/color_circle" />
+
+        <org.florescu.android.rangeseekbar.RangeSeekBar
+            android:id="@+id/rangeSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:activateOnDefaultValues="true"
+            app:activeColor="@color/colorAccent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_round"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connected to"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/colorTextRare" />
+
+        <TextView
+            android:id="@+id/address_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address: "
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/port_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Port:"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/max_led_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max Leds:"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/white" />
+
+        <CheckBox
+            android:id="@+id/main_checkbox_colorseq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Enable color sequence"
+            android:textColor="@color/colorTextRare" />
+
+    </LinearLayout>
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/layout_round"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Leds" />
+
+    </LinearLayout>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/led_change_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/button_rectangle"
+            android:elevation="0dp"
+            android:text="CHANGE"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+    </RelativeLayout>
+
+</LinearLayout>
