@@ -155,7 +155,7 @@ public class MainFragment extends Fragment {
     }
 
     private void updateLedColor(final int color) {
-        getActivity().runOnUiThread(new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
 
@@ -169,9 +169,7 @@ public class MainFragment extends Fragment {
                 try {
                     DatagramSocket datagramSocket = new DatagramSocket();
                     InetAddress host = InetAddress.getByName(SrvAdr);
-
                     ByteArrayOutputStream outputStream = new ByteArrayOutputStream( );
-
 
                     if(!checkBoxColorSeq.isChecked()) {
                         for(int i = min_led; i < NUM_LEDS; i++) {
@@ -233,7 +231,6 @@ public class MainFragment extends Fragment {
                         }
                         db.close();
                     }
-
                     byte c[] = outputStream.toByteArray( );
                     DatagramPacket datagramPacket = new DatagramPacket(c, c.length, host, SrvPort);
                     datagramSocket.send(datagramPacket);
@@ -242,7 +239,7 @@ public class MainFragment extends Fragment {
 
                 }
             }
-        });
+        }).start();
     }
 
    private void updateTextBox(boolean update_variables) {
